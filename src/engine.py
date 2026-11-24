@@ -182,7 +182,12 @@ class SimulationEngine:
 
         return results
 
-    def run_full_suite(self, workload_file: str = "data/sample_workload.json") -> Dict[str, Any]:
+    def run_full_suite(
+        self,
+        workload_file: str = "data/sample_workload.json",
+        student_name: str = "Sahil Raj",
+        roll_number: str = "2401410004"
+    ) -> Dict[str, Any]:
         """Run complete suite across all 4 modules and generate comprehensive PDF report."""
         config = self.load_workload(workload_file)
 
@@ -209,8 +214,8 @@ class SimulationEngine:
             cpu_comp_path=cpu_comp,
             disk_chart_path=disk_traj,
             memory_chart_path=page_comp,
-            student_name="Sahil Raj",
-            roll_number="2401410004"
+            student_name=student_name,
+            roll_number=roll_number
         )
         self.logger.info(f"Master PDF Report generated at: {pdf_path}")
 

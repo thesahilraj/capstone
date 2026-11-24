@@ -28,6 +28,8 @@ from reportlab.platypus import (
 
 class NumberedCanvas(canvas.Canvas):
     """Two-pass canvas for dynamic running headers and 'Page X of Y' footers."""
+    student_name: str = "Sahil Raj"
+    roll_number: str = "2401410004"
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -50,9 +52,12 @@ class NumberedCanvas(canvas.Canvas):
         self.setFont("Helvetica-Bold", 8)
         self.setFillColor(colors.HexColor("#4A5568"))
 
+        s_name = getattr(self, "student_name", "Student")
+        r_num = getattr(self, "roll_number", "")
+
         # Running header (pages > 1)
         if self._pageNumber > 1:
-            self.drawString(36, 762, "OS-SimSuite Capstone | Sahil Raj (Roll No. 2401410004)")
+            self.drawString(36, 762, f"OS-SimSuite Capstone | {s_name} (Roll No. {r_num})")
             self.drawRightString(576, 762, "Operating Systems Capstone Project")
             self.setStrokeColor(colors.HexColor("#CBD5E0"))
             self.setLineWidth(0.6)
@@ -65,7 +70,7 @@ class NumberedCanvas(canvas.Canvas):
 
         self.setFont("Helvetica", 8)
         self.setFillColor(colors.HexColor("#718096"))
-        self.drawString(36, 30, "Candidate: Sahil Raj (Roll No. 2401410004) | OS Resource Management Capstone")
+        self.drawString(36, 30, f"Candidate: {s_name} (Roll No. {r_num}) | OS Resource Management Capstone")
         page_str = f"Page {self._pageNumber} of {page_count}"
         self.drawRightString(576, 30, page_str)
 
@@ -295,7 +300,7 @@ class PDFReportGenerator:
             [
                 Paragraph("<b>Total</b>", table_cell_style),
                 Paragraph("<b>Complete Capstone Suite</b>", table_cell_style),
-                Paragraph("<b>End-to-end working, validated, fully documented application for Sahil Raj (2401410004)</b>", table_cell_style),
+                Paragraph(f"<b>End-to-end working, validated, fully documented application for {student_name} ({roll_number})</b>", table_cell_style),
                 Paragraph("<b>Delivered</b>", table_cell_style)
             ]
         ]
@@ -816,8 +821,12 @@ class PDFReportGenerator:
             body_style
         ))
 
-        # Build document using NumberedCanvas for dynamic page numbering
-        doc.build(elements, canvasmaker=NumberedCanvas)
+        # Build document using dynamic canvasmaker
+        canvas_cls = type("DynamicNumberedCanvas", (NumberedCanvas,), {
+            "student_name": student_name,
+            "roll_number": roll_number
+        })
+        doc.build(elements, canvasmaker=canvas_cls)
 
         # Also create named copy for the candidate
         candidate_copy_path = os.path.join(

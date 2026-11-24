@@ -28,6 +28,12 @@ def main():
         "--report", "-r", action="store_true", help="Generate publication-ready final PDF report"
     )
     parser.add_argument(
+        "--student-name", type=str, default="Sahil Raj", help="Candidate name for the report"
+    )
+    parser.add_argument(
+        "--roll-number", type=str, default="2401410004", help="Candidate roll number for the report"
+    )
+    parser.add_argument(
         "--test", "-t", action="store_true", help="Execute automated pytest regression tests"
     )
 
@@ -40,7 +46,7 @@ def main():
 
     if args.batch:
         print(f"Executing batch workload from: {args.batch}")
-        res = engine.run_full_suite(args.batch)
+        res = engine.run_full_suite(args.batch, student_name=args.student_name, roll_number=args.roll_number)
         print("Batch execution completed successfully. Report generated at:", res["pdf_report"])
         return
 
@@ -66,8 +72,8 @@ def main():
         return
 
     if args.report:
-        print("Generating comprehensive PDF report...")
-        res = engine.run_full_suite("data/sample_workload.json")
+        print(f"Generating comprehensive PDF report for {args.student_name} ({args.roll_number})...")
+        res = engine.run_full_suite("data/sample_workload.json", student_name=args.student_name, roll_number=args.roll_number)
         print(f"Final Report successfully compiled: {res['pdf_report']}")
         return
 
