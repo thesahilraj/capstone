@@ -1,0 +1,19 @@
+==================================================================
+          OS-SimSuite: Automated Batch Benchmark Runner           
+==================================================================
+[BENCHMARK] Executing full suite on workload: data/sample_workload.json
+[INFO] Loaded workload configuration from data/sample_workload.json
+[INFO] ==================================================
+[INFO] STARTING FULL OS-SIMSUITE BENCHMARK EXECUTION
+[INFO] ==================================================
+[INFO] Running CPU Scheduling benchmark across 4 processes (Quantum=3)
+[INFO] Simulating page replacement (Frames=3, References=20)
+[INFO] Banker's Safety Check: System is in a SAFE STATE. Complete Safe Execution Sequence: <P1 -> P3 -> P0 -> P2 -> P4>.
+[INFO] Simulating disk scheduling from head=53 on 200 cylinders (direction=RIGHT)
+[INFO] Master PDF Report generated at: output/reports/OS_SimSuite_Final_Report.pdf
+==================================================================
+[SUCCESS] Benchmark completed! Generated artifacts:
+  • Figures:  output/figures/
+  • Traces:   output/traces/
+  • Reports:  output/reports/OS_SimSuite_Final_Report.pdf (885 KB)
+==================================================================

@@ -1,0 +1,15 @@
+=================================================================
+  OS-SimSuite: Main Control Center
+=================================================================
+
+  1. CPU Process Scheduling Simulator
+  2. Memory Management & Paging Subsystem
+  3. Deadlock Avoidance (Banker's Algorithm)
+  4. Storage / Disk Scheduling Simulator
+  5. Run Complete Multi-Module Benchmark Suite
+  6. Compile Submission PDF Report
+  7. Run Automated Regression Tests (pytest)
+  0. Exit Suite
+
+-----------------------------------------------------------------
+Select an option [0-7]: _

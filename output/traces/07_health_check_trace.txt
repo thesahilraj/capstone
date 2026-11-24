@@ -1,0 +1,19 @@
+[HEALTH-CHECK] Running OS-SimSuite Pre-Flight Diagnostics...
+[OK] Python runtime: Python 3.13.17 (Version: 3.13)
+[HEALTH-CHECK] Verifying installed Python libraries...
+  [OK] numpy
+  [OK] matplotlib
+  [OK] tabulate
+  [OK] reportlab
+  [OK] pytest
+[HEALTH-CHECK] Verifying directory integrity...
+  [OK] Directory exists: src/modules
+  [OK] Directory exists: src/analytics
+  [OK] Directory exists: src/utils
+  [OK] Directory exists: docs/assets
+  [OK] Directory exists: data
+  [OK] Directory exists: output/figures
+  [OK] Directory exists: output/traces
+  [OK] Directory exists: output/reports
+  [OK] Directory exists: tests
+[HEALTH-CHECK] All diagnostic checks passed successfully!

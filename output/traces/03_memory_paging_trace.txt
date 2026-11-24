@@ -1,0 +1,19 @@
+[INFO] Loaded workload configuration from data/sample_workload.json
+[INFO] Simulating contiguous allocation: Total Size=2000 KB, Partitions=[100, 500, 200, 300, 600]
+[INFO] Simulating page replacement (Frames=3, References=20)
+
+[PAGE REPLACEMENT COMPARISON]
++----------------------------+----------+--------------+---------------+-------------+---------------+-------------+
+| Algorithm                  |   Frames |   References |   Page Faults |   Page Hits | Fault Ratio   | Hit Ratio   |
++============================+==========+==============+===============+=============+===============+=============+
+| FIFO (First-In, First-Out) |        3 |           20 |            15 |           5 | 75.00%        | 25.00%      |
++----------------------------+----------+--------------+---------------+-------------+---------------+-------------+
+| LRU (Least Recently Used)  |        3 |           20 |            12 |           8 | 60.00%        | 40.00%      |
++----------------------------+----------+--------------+---------------+-------------+---------------+-------------+
+| Optimal (OPT)              |        3 |           20 |             9 |          11 | 45.00%        | 55.00%      |
++----------------------------+----------+--------------+---------------+-------------+---------------+-------------+
+
+[CONTIGUOUS ALLOCATION SUMMARY: BEST_FIT]
+  • Allocated Jobs: 4 / 4 | Failed Requests: 0
+  • Total Internal Fragmentation: 533 KB | External Fragmentation: 0 KB
+[INFO] Visualizations generated in output/figures/page_replacement_comparison.png

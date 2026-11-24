@@ -1,0 +1,16 @@
+{
+  "partitioning": {
+    "total_memory_size": 2000,
+    "initial_partitions": [100, 500, 200, 300, 600],
+    "process_requests": [
+      {"pid": "Job1", "size": 212},
+      {"pid": "Job2", "size": 417},
+      {"pid": "Job3", "size": 112},
+      {"pid": "Job4", "size": 426}
+    ]
+  },
+  "paging": {
+    "frame_capacity": 3,
+    "reference_string": [7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2, 1, 2, 0, 1, 7, 0, 1]
+  }
+}

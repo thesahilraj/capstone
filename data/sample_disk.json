@@ -1,0 +1,7 @@
+{
+  "initial_head_position": 53,
+  "previous_head_position": 50,
+  "disk_cylinders": 200,
+  "direction": "RIGHT",
+  "requests": [98, 183, 37, 122, 14, 124, 65, 67]
+}

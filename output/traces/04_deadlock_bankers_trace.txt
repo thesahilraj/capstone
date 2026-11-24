@@ -1,0 +1,16 @@
+[INFO] Loaded workload configuration from data/sample_workload.json
+[INFO] Initializing Dijkstra's Banker's Algorithm: 5 Processes, 3 Resource Types
+
+[DEADLOCK SAFETY EVALUATION]
+[SAFE STATE] System is in a SAFE STATE. Complete Safe Execution Sequence: <P1 -> P3 -> P0 -> P2 -> P4>.
+
+Step-by-step Work Vector Evolution:
+  Step 1: Process P1 -> Work Before: [3, 3, 2] -> Released: [2, 0, 0] -> Work After: [5, 3, 2]
+  Step 2: Process P3 -> Work Before: [5, 3, 2] -> Released: [2, 1, 1] -> Work After: [7, 4, 3]
+  Step 3: Process P0 -> Work Before: [7, 4, 3] -> Released: [0, 1, 0] -> Work After: [7, 5, 3]
+  Step 4: Process P2 -> Work Before: [7, 5, 3] -> Released: [3, 0, 2] -> Work After: [10, 5, 5]
+  Step 5: Process P4 -> Work Before: [10, 5, 5] -> Released: [0, 0, 2] -> Work After: [10, 5, 7]
+
+[RESOURCE REQUEST TEST]
+[INFO] Request from P1 for [1, 0, 2]: GRANTED. System remains in SAFE STATE. Safe Sequence: <P1 -> P3 -> P0 -> P2 -> P4>.
+[INFO] Request from P0 for [0, 2, 0]: DENIED. Leads to UNSAFE STATE. Speculative allocation rolled back safely.

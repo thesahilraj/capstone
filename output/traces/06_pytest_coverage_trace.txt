@@ -1,0 +1,37 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.17, pytest-9.2.0, pluggy-1.7.0
+rootdir: C:\Users\krish\Downloads\capstone
+configfile: pytest.ini
+collected 27 items
+
+tests/test_cpu_scheduler.py::test_fcfs_basic PASSED                      [  3%]
+tests/test_cpu_scheduler.py::test_sjf_vs_srtf PASSED                     [  7%]
+tests/test_cpu_scheduler.py::test_priority_scheduling PASSED             [ 11%]
+tests/test_cpu_scheduler.py::test_round_robin PASSED                     [ 14%]
+tests/test_cpu_scheduler.py::test_cpu_validation_zero_burst PASSED       [ 18%]
+tests/test_cpu_scheduler.py::test_cpu_validation_negative_arrival PASSED [ 22%]
+tests/test_deadlock_guard.py::test_bankers_safety_sequence PASSED        [ 25%]
+tests/test_deadlock_guard.py::test_bankers_valid_request PASSED          [ 29%]
+tests/test_deadlock_guard.py::test_bankers_request_exceeds_need PASSED   [ 33%]
+tests/test_deadlock_guard.py::test_bankers_request_exceeds_available PASSED [ 37%]
+tests/test_deadlock_guard.py::test_bankers_unsafe_detection PASSED       [ 40%]
+tests/test_disk_scheduler.py::test_disk_fcfs PASSED                      [ 44%]
+tests/test_disk_scheduler.py::test_disk_sstf PASSED                      [ 48%]
+tests/test_disk_scheduler.py::test_disk_scan PASSED                      [ 51%]
+tests/test_disk_scheduler.py::test_disk_look PASSED                      [ 55%]
+tests/test_disk_scheduler.py::test_disk_invalid_head PASSED              [ 59%]
+tests/test_disk_scheduler.py::test_disk_out_of_bounds_request PASSED     [ 62%]
+tests/test_engine.py::test_simulation_engine_full_suite PASSED           [ 66%]
+tests/test_memory_manager.py::test_contiguous_fits PASSED                [ 70%]
+tests/test_memory_manager.py::test_page_replacement_fifo PASSED          [ 74%]
+tests/test_memory_manager.py::test_page_replacement_lru PASSED           [ 77%]
+tests/test_memory_manager.py::test_page_replacement_optimal PASSED       [ 81%]
+tests/test_memory_manager.py::test_paging_invalid_capacity PASSED        [ 85%]
+tests/test_metrics_formatter.py::test_metrics_formatter_cpu PASSED       [ 88%]
+tests/test_metrics_formatter.py::test_metrics_formatter_page_replacement PASSED [ 92%]
+tests/test_metrics_formatter.py::test_metrics_formatter_disk PASSED      [ 96%]
+tests/test_metrics_formatter.py::test_metrics_formatter_contiguous_memory PASSED [100%]
+
+=============================== tests coverage ================================
+TOTAL: 1214 statements | 105 missed | 91% Code Coverage
+======================== 27 passed, 1 warning in 7.91s ========================
